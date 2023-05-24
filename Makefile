@@ -7,7 +7,6 @@ EC2_INSTANCE_IP := $(shell sed -n 's/^EC2_INSTANCE_IP=//p' config.ini)
 PRIVATE_KEY_PATH := $(shell sed -n 's/^PRIVATE_KEY_PATH=//p' config.ini)
 
 
-# Command to create local python venv with required packages for development
 .SILENT:
 .PHONY: setup
 setup: create_env

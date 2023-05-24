@@ -26,10 +26,10 @@ The following steps are intended to show how the recommendation API can be deplo
    **NOTE:** Ensure "read-only" permissions are applied to the `.pem` file using the command:
    `chmod 400 path/to/file.pem`
 
-2. Install git and docker on your ec2 instance by running the following commands:\n
-   `sudo apt-get update`\n
-   `sudo apt-get install docker.io`\n
-   `sudo usermod -aG docker ubuntu`
+2. Install git and docker on your ec2 instance by running the following commands:
+   - `sudo apt-get update`
+   - `sudo apt-get install docker.io`
+   - `sudo usermod -aG docker ubuntu`
 
 
 

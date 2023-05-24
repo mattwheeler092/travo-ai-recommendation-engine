@@ -12,14 +12,17 @@ This GitHub repo covers the code used to generate the personalised recommendatio
 
 ![](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/images/travo-ai-demo.gif)
 
+<a name="description"/>
+## Project Description
 
-## Project Description {#description}
+<a name="architecture"/>
+## Recommender Architecture
 
-## Recommender Architecture {#architecture}
+<a name="installation"/>
+## Development Installation
 
-## Development Installation {#installation}
-
-## Deployment to AWS {#deployment}
+<a name="deployment"/>
+## Deployment to AWS
 
 
 

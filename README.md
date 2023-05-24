@@ -1,5 +1,7 @@
 # Travo.ai Recommendation Engine
 
+Travo.ai ([Website](https://eclectic-brioche-a372fe.netlify.app/)) is a travel planning app that generates personalised travel itineries based on user text prompts that describe what the user wants to do on their trip!
+
 ![](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/images/travo-ai-demo.gif)
 
 

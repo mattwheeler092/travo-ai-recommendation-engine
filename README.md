@@ -1,8 +1,27 @@
 # Travo.ai Recommendation Engine
 
-Travo.ai ([Website](https://eclectic-brioche-a372fe.netlify.app/)) is a travel planning app that generates personalised travel itineries based on user text prompts that describe what the user wants to do on their trip!
+Travo.ai ([Website](https://eclectic-brioche-a372fe.netlify.app/)) is a travel planning app that generates personalised travel itineries based on user provided text prompts that describe what the user wants to do on their trip! The app has access to over 120,000 activities, across 130 cities, that have been scraped from TripAdviser (more information [here](https://github.com/mattwheeler092/tripadvisor-scraper)). 
+
+This GitHub repo covers the code used to generate the personalised recommendations, as well as the deployment of the recommendation API to AWS. It will cover:
+
+- [Project Description](#description)
+- [Recommender Architecture](#architecture)
+- [Development Installation](#installation)
+- [Deployment to AWS](#deployment)
+
 
 ![](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/images/travo-ai-demo.gif)
+
+
+## Project Description {description}
+
+## Recommender Architecture {architecture}
+
+## Development Installation {installation}
+
+## Deployment to AWS {deployment}
+
+
 
 
 # How to

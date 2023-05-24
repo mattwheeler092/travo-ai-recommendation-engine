@@ -22,14 +22,27 @@ This GitHub repo covers the code used to generate the personalised recommendatio
 
 The following steps are intended to show how the recommendation API can be deployed onto an AWS EC2 instance. Once these steps are complete, you will be able to access the recommendation engine via the Python `requests` library, as detailed [here](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb).
 
-1. Create an AWS EC2 instance and save the corresponding `.pem` file. 
-   **NOTE:** Ensure "read-only" permissions are applied to the `.pem` file using the command:
-   `chmod 400 path/to/file.pem`
+1. Create an AWS EC2 instance, with Amazon Linux POS, and save the corresponding `.pem` file. Ensure "read-only" permissions are applied to the `.pem` file by running the command: `chmod 400 path/to/file.pem`
 
-2. Install git and docker on your ec2 instance by running the following commands:
-   - `sudo apt-get update`
-   - `sudo apt-get install docker.io`
-   - `sudo usermod -aG docker ubuntu`
+2. SSH into you EC2 instance using your `.pem` file and EC2 Public IP-address using the command: `ssh -i path/to/file.pem ec2-user@$EC2_PUBLIC_IP`
+
+3. Install git on your ec2 instance by running the following commands:
+   - `sudo yum update -y`
+   - `sudo yum install git`
+
+4. Install docker on your ec2 instance by running the following commands:
+   - `sudo yum install docker -y`
+   - `sudo service docker start`
+   - `sudo usermod -a -G docker ec2-user`
+
+5. Disconnect and then re-SSH into your EC2 instance. Run `docker info` to validate docker has been installed.
+
+6. Install docker-compose on your ec2 instance by running the following commands:
+   - `sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
+   - `sudo chmod +x /usr/local/bin/docker-compose`
+   - Run `docker-compose --version` to validate installation
+
+7. Navigate to the root of the repository, run the command: `make start-server`. Once complete, the recommendation API will be accessible via the endpoint: `http://EC2_PUBLIC_IP/recommendation/`. See the tutorial [notebook](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb) for more details.
 
 
 

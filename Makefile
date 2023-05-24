@@ -1,9 +1,11 @@
-include config.ini
-
 NO_COLOR=\x1b[0m
 OK_COLOR=\x1b[32;01m
 
 GITHUB_REPO="https://github.com/mattwheeler092/travo-ai-recommendation-engine.git"
+
+EC2_INSTANCE_IP := $(shell sed -n 's/^EC2_INSTANCE_IP=//p' config.ini)
+PRIVATE_KEY_PATH := $(shell sed -n 's/^PRIVATE_KEY_PATH=//p' config.ini)
+
 
 # Command to create local python venv with required packages for development
 .SILENT:
@@ -23,13 +25,13 @@ ifeq ("$(wildcard ./env)", "")
 	python3 -m venv env
 endif
 
+
 .PHONY: install
 install:
 	printf "Installing Packages... "
 	pip install -q --upgrade 'pip>=22.2.2'
 	pip install -q -r ./requirements.txt
 	echo "DONE\n"
-
 
 
 .SILENT:

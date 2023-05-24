@@ -1,3 +1,8 @@
+# Travo.ai Recommendation Engine
+
+![](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/images/travo-ai-demo.gif)
+
+
 # How to
 🚨 When you add anything to `server.py` make sure to update the dependencies in `requirement.txt` and `Dockerfile` in order to build the image successfully.
 ## Build the image

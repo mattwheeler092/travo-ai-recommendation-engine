@@ -4,24 +4,20 @@ Travo.ai ([Website](https://eclectic-brioche-a372fe.netlify.app/)) is a travel p
 
 This GitHub repo covers the code used to generate the personalised recommendations, as well as the deployment of the recommendation API to AWS. It will cover:
 
-- [Project Description](#description)
-- [Recommender Architecture](#architecture)
-- [Development Installation](#installation)
-- [Deployment to AWS](#deployment)
+- [Project Description](#project-description)
+- [Recommender Architecture](#recommender-architecture)
+- [Dev Installation](#dev-installation)
+- [Deployment to AWS](#deployment-on-aws)
 
 
 ![](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/images/travo-ai-demo.gif)
 
-<a name="description"/>
 ## Project Description
 
-<a name="architecture"/>
 ## Recommender Architecture
 
-<a name="installation"/>
-## Development Installation
+## Dev Installation
 
-<a name="deployment"/>
 ## Deployment to AWS
 
 

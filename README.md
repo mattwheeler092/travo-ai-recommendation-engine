@@ -22,9 +22,11 @@ This GitHub repo covers the code used to generate the personalised recommendatio
 
 The following steps are intended to show how the recommendation API can be deployed onto an AWS EC2 instance. Once these steps are complete, you will be able to access the recommendation engine via the Python `requests` library, as detailed [here](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb).
 
-1. Create an AWS EC2 instance, with Amazon Linux POS, and save the corresponding `.pem` file. Ensure "read-only" permissions are applied to the `.pem` file by running the command: `chmod 400 path/to/file.pem`
+1. Create an AWS EC2 instance, with Amazon Linux POS, and save the corresponding `.pem` file. Ensure "read-only" permissions are applied to the `.pem` file by running the command: 
+   - `chmod 400 path/to/file.pem`
 
-2. SSH into you EC2 instance using your `.pem` file and EC2 Public IP-address using the command: `ssh -i path/to/file.pem ec2-user@$EC2_PUBLIC_IP`
+2. SSH into you EC2 instance using your `.pem` file and EC2 Public IP-address using the command: 
+   - `ssh -i path/to/file.pem ec2-user@$EC2_PUBLIC_IP`
 
 3. Install git on your ec2 instance by running the following commands:
    - `sudo yum update -y`
@@ -42,7 +44,10 @@ The following steps are intended to show how the recommendation API can be deplo
    - `sudo chmod +x /usr/local/bin/docker-compose`
    - Run `docker-compose --version` to validate installation
 
-7. Navigate to the root of the repository, run the command: `make start-server`. Once complete, the recommendation API will be accessible via the endpoint: `http://EC2_PUBLIC_IP/recommendation/`. See the tutorial [notebook](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb) for more details.
+7. Navigate to the root of the repository, run the command: 
+   - `make start-server`
+
+Once these steps are commpleted, the recommendation API will be accessible via the endpoint: `http://EC2_PUBLIC_IP/recommendation/`. See the tutorial [notebook](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb) for more details.
 
 
 

@@ -7,7 +7,7 @@ This GitHub repo covers the code used to generate the personalised recommendatio
 - [Project Description](#project-description)
 - [Recommender Architecture](#recommender-architecture)
 - [Dev Installation](#dev-installation)
-- [Deployment to AWS](#deployment-on-aws)
+- [Deployment to AWS](#deployment-to-aws)
 
 
 ![](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/images/travo-ai-demo.gif)
@@ -19,6 +19,17 @@ This GitHub repo covers the code used to generate the personalised recommendatio
 ## Dev Installation
 
 ## Deployment to AWS
+
+The following steps are intended to show how the recommendation API can be deployed onto an AWS EC2 instance. Once these steps are complete, you will be able to access the recommendation engine via the Python `requests` library, as detailed [here](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb).
+
+1. Create an AWS EC2 instance and save the corresponding `.pem` file. 
+   **NOTE:** Ensure "read-only" permissions are applied to the `.pem` file using the command:
+   `chmod 400 path/to/file.pem`
+
+2. Install git and docker on your ec2 instance by running the following commands:
+   `sudo apt-get update`
+   `sudo apt-get install docker.io`
+   `sudo usermod -aG docker ubuntu`
 
 
 

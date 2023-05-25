@@ -1,8 +1,10 @@
 # Travo.ai Recommendation Engine
 
-Travo.ai ([Website](https://eclectic-brioche-a372fe.netlify.app/)) is a travel planning app that generates personalised travel itineries based on user provided text prompts that describe what the user wants to do on their trip! The app has access to over 120,000 activities, across 130 cities, that have been scraped from TripAdviser (more information [here](https://github.com/mattwheeler092/tripadvisor-scraper)). 
+Travo.ai is an incredible travel planning app designed to make your trip planning experience seamless and personalized. By simply providing text prompts describing your desired activities, Travo.ai generates customized travel itineraries just for you!
 
-This GitHub repo covers the code used to generate the personalised recommendations, as well as the deployment of the recommendation API to AWS. It will cover:
+With access to a vast database of over 120,000 activities from 130 cities worldwide, sourced directly from TripAdviser ([more details](https://github.com/mattwheeler092/tripadvisor-scraper)), Travo.ai ensures that you have access to the best recommendations for your travel adventures. You can visit our website ([here](https://eclectic-brioche-a372fe.netlify.app/)) for more information.
+
+This GitHub repository encompasses all the code required to generate these personalized recommendations, as well as the deployment process of our recommendation API on AWS. Topics covered include:
 
 - [Project Description](#project-description)
 - [Recommender Architecture](#recommender-architecture)
@@ -18,7 +20,7 @@ This GitHub repo covers the code used to generate the personalised recommendatio
 
 ## Dev Installation
 
-If you want to use this code for your own use, in the repository root directory, run the following commands to create and activate a python virtual environment to continue development:
+If you want to use this code for your own use, in the repository root directory run the following commands to create and activate the python virtual environment to continue development:
 
    - `make setup`
    - `source env/bin/activate`
@@ -58,5 +60,5 @@ The following steps are intended to show how the recommendation API can be deplo
 
 Once these steps are commpleted, the recommendation API will be accessible via the endpoint: `http://EC2_PUBLIC_IP/recommendation/`. See the tutorial [notebook](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb) for more details.
 
-**NOTE:** When you are done with the recommendation API, run the following command to shut down the server: `make stop-server`. Also make sure to shut down the EC2 instance to avoid excess billing!!
+**NOTE:** When you are done with the recommendation API, run the command `make stop-server` to shut down the recommendation API server. Also make sure to shut down the EC2 instance to avoid excess billing!!
 

@@ -2,34 +2,32 @@
 
 Travo.ai is an incredible travel planning app designed to make your trip planning experience seamless and personalized. By simply providing text prompts describing your desired activities, Travo.ai generates customized travel itineraries just for you!
 
-With access to a vast database of over 120,000 activities from 130 cities worldwide, sourced directly from TripAdviser ([more details](https://github.com/mattwheeler092/tripadvisor-scraper)), Travo.ai ensures that you have access to the best recommendations for your travel adventures. You can visit our website ([here](https://eclectic-brioche-a372fe.netlify.app/)) for more information.
+With access to a vast database of over 120,000 activities from 130 cities worldwide, sourced directly from TripAdviser ([more details](https://github.com/mattwheeler092/tripadvisor-scraper)), Travo.ai ensures that you have access to the best recommendations for your travel adventures. You can visit our  [website](https://eclectic-brioche-a372fe.netlify.app/) to try it out for yourself!
 
 This GitHub repository encompasses all the code required to generate these personalized recommendations, as well as the deployment process of our recommendation API on AWS. Topics covered include:
 
 - [Project Description](#project-description)
 - [Recommender Architecture](#recommender-architecture)
-- [Dev Installation](#dev-installation)
 - [Deployment to AWS](#deployment-to-aws)
+- [Dev Installation](#dev-installation)
 
 
 ![](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/images/travo-ai-demo.gif)
 
 ## Project Description
 
+Travo.ai is a personalized trip planning app that generates customized itineraries based on user-provided descriptions of their desired activities. The core of this application is a robust recommendation engine that matches user preferences with a database of TripAdvisor activities to generate relevant trip suggestions.
+
+To build the recommendation engine, we leveraged the OpenAI embedding API to obtain vector representations of user text prompts and predefined preferences. Using these vectors, we queried a Pinecone database containing activities scraped from TripAdvisor. The query results were then ranked based on both similarity to the user's embedded vector and popularity. Finally, a clustering algorithm was applied to group the activities into different days of the trip.
+
+This innovative approach successfully delivers recommendations closely aligned with the user's input, ensuring a tailored travel experience.
+
+
 ## Recommender Architecture
-
-## Dev Installation
-
-If you want to use this code for your own use, in the repository root directory run the following commands to create and activate the python virtual environment to continue development:
-
-   - `make setup`
-   - `source env/bin/activate`
-
-**NOTE:** If you need to include new packages for your recommendation engine, make sure to include them in the `requirements.txt` file
 
 ## Deployment to AWS
 
-The following steps are intended to show how the recommendation API can be deployed onto an AWS EC2 instance. Once these steps are complete, you will be able to access the recommendation engine via the Python `requests` library, as detailed [here](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb).
+Follow these steps to deploy the recommendation API onto an AWS EC2 instance. Once completed, you will be able to access the recommendation engine using the Python requests library as explained [here](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb).
 
 1. Create an AWS EC2 instance, with Amazon Linux POS, and save the corresponding `.pem` file. Ensure "read-only" permissions are applied to the `.pem` file by running the command: 
    - `chmod 400 path/to/file.pem`
@@ -55,10 +53,22 @@ The following steps are intended to show how the recommendation API can be deplo
    - `sudo chmod +x /usr/local/bin/docker-compose`
    - Run `docker-compose --version` to validate installation
 
-8. Navigate to the root of the repository, run the command: 
-   - `make start-server`
+After completing these steps, the AWS EC2 instance is ready to host the recommendation API. You do not need to repeat these steps. The repository's Makefile provides convenient commands for starting and stopping the recommendation API server on your instance. The available commands are:
 
-Once these steps are commpleted, the recommendation API will be accessible via the endpoint: `http://EC2_PUBLIC_IP/recommendation/`. See the tutorial [notebook](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb) for more details.
+   - `make start-server`: Pulls the latest repo changes from Github and starts the FastAPI app
+   - `make stop-server`: Shuts down the FastAPI app (remember to also such down the EC2 instance!)
 
-**NOTE:** When you are done with the recommendation API, run the command `make stop-server` to shut down the recommendation API server. Also make sure to shut down the EC2 instance to avoid excess billing!!
+**NOTE:** The first time you run `make start-server`, the repository will be cloned onto the EC2 instance; re-running the commands will pull any changes to the repo. Once the FastAPI app is running, you can access the recommendation API at the endpoint: http://EC2_PUBLIC_IP/recommendation/. For more details, refer to the tutorial [notebook](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb)
 
+
+## Dev Installation
+
+If you want to use this code for your own use, follow these steps in the repository root directory to create and activate the Python virtual environment for further development:
+
+1. Run the following command to set up the virtual environment. You only need to run this once:
+   - `make setup`
+
+2. Activate the virtual environment by running the command:
+   - `source env/bin/activate`
+
+**NOTE:** If you need to include new packages for your recommendation engine, make sure to include them in the `requirements.txt` file

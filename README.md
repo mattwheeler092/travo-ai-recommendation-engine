@@ -25,6 +25,8 @@ This innovative approach successfully delivers recommendations closely aligned w
 
 ## Recommender Architecture
 
+![](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/images/recommender-architecture-diagram.png)
+
 ## Deployment to AWS
 
 Follow these steps to deploy the recommendation API onto an AWS EC2 instance. Once completed, you will be able to access the recommendation engine using the Python requests library as explained [here](https://github.com/mattwheeler092/travo-ai-recommendation-engine/blob/main/tutorial.ipynb).

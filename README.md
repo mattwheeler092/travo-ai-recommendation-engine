@@ -16,11 +16,11 @@ This GitHub repository encompasses all the code required to generate these perso
 
 ## Project Description
 
-Travo.ai is a personalized trip planning app that generates customized itineraries based on user-provided descriptions of their desired activities. The core of this application is a robust recommendation engine that matches user preferences with a database of TripAdvisor activities to generate relevant trip suggestions.
+Travo.ai is a personalized trip planning app that generates customized itineraries based on user-provided descriptions of their desired activities. At the core of this application is a robust recommendation engine that matches user preferences with a database of TripAdvisor activities to generate relevant trip suggestions.
 
 To build the recommendation engine, we leveraged the OpenAI embedding API to obtain vector representations of user text prompts and predefined preferences. Using these vectors, we queried a Pinecone database containing activities [scraped from TripAdvisor](https://github.com/mattwheeler092/tripadvisor-scraper). The query results were then ranked based on both similarity to the user's embedded vector and popularity. Finally, a clustering algorithm was applied to group the activities into different days of the trip.
 
-This innovative approach successfully delivers recommendations closely aligned with the user's input, ensuring a tailored travel experience. The **Recommender Architecture** section will run through the specifics of how we generated each recommendation.
+This innovative approach successfully delivers recommendations closely aligned with the user's input, ensuring a tailored travel experience. The **Recommender Architecture** section runs through the specifics of how we generated each recommendation.
 
 
 ## Recommender Architecture
